@@ -1,0 +1,117 @@
+/* Estilos básicos para sitio de venta de plantas - simple y claro */
+:root{
+  --verde:#2e7d32;
+  --verde-osc:#1b5e20;
+  --claro:#f7f9f8;
+  --gris:#666;
+  --borde:#e3e6e3;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--claro);color:#222;}
+
+a{color:var(--verde);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+header{
+  background:linear-gradient(0deg, var(--verde), var(--verde-osc));
+  color:white;
+  padding:14px 0;
+  box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1024px;margin:0 auto;padding:0 16px;
+}
+.brand{font-weight:700;letter-spacing:.5px;}
+.menu{display:flex;gap:12px;align-items:center;}
+.menu a{
+  color:white;padding:8px 10px;border-radius:10px;
+}
+.menu a.active, .menu a:hover{
+  background:rgba(255,255,255,.15);
+}
+
+.badge{
+  display:inline-block;min-width:22px;padding:2px 6px;border-radius:999px;background:white;color:var(--verde);font-weight:700;font-size:.85rem;text-align:center;margin-left:6px;
+  border:1px solid rgba(0,0,0,.05);
+}
+
+main{max-width:1024px;margin:20px auto;padding:0 16px;}
+.card{
+  background:white;border:1px solid var(--borde);border-radius:14px;padding:16px;
+  box-shadow:0 2px 6px rgba(0,0,0,.04);
+}
+
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;
+}
+
+.product-card img{width:100%;height:160px;object-fit:contain;border-radius:12px;border:1px solid var(--borde);background:#fff;}
+.product-card h4{margin:8px 0 4px;font-size:1.05rem;}
+.price{color:var(--verde);font-weight:700;margin-bottom:10px;}
+button.btn{
+  width:100%;padding:10px 12px;border:0;border-radius:12px;background:var(--verde);color:white;font-weight:700;cursor:pointer;
+}
+button.btn:hover{background:var(--verde-osc);}
+
+.section{margin:18px 0;}
+.hero{
+  display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center;
+}
+.hero h1{margin:0 0 8px;font-size:2rem;}
+.hero p{color:var(--gris);}
+.hero .img{
+  aspect-ratio:1.1/1;border-radius:16px;border:1px dashed var(--borde);display:grid;place-content:center;background:white;color:var(--gris);
+}
+
+.info-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px;}
+.info{
+  border-left:4px solid var(--verde);padding:8px 12px;background:white;border-radius:10px;border:1px solid var(--borde);
+}
+
+.cart{position:sticky;top:12px;}
+.cart h3{margin-top:0;}
+.cart-item{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px dashed var(--borde);font-size:.95rem;}
+.cart-footer{display:flex;justify-content:space-between;align-items:center;padding-top:10px;font-weight:700;}
+.cart-empty{color:var(--gris);}
+
+form.simple{display:grid;gap:10px;max-width:420px;}
+label{font-size:.9rem;color:#333;}
+input{
+  padding:10px;border-radius:10px;border:1px solid var(--borde);width:100%;background:white;
+}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;}
+hr{border:0;border-top:1px solid var(--borde);margin:18px 0;}
+.small{font-size:.9rem;color:var(--gris);}
+
+.product-card{ position:relative; }
+.ribbon{
+  position:absolute; top:8px; left:8px;
+  padding:2px 8px; border-radius:999px;
+  background:#dd0808; color:#ddc80e; font-weight:700; font-size:.8rem;
+}
+
+/* Controles de productos */
+.toolbar{
+  display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:0 0 12px 0;
+}
+.toolbar input, .toolbar select, .toolbar button{
+  padding:8px 10px; border-radius:10px; border:1px solid var(--borde); background:white;
+}
+.toolbar .spacer{ flex:1 1 auto; }
+
+/* Vista lista (1 columna) */
+.grid.list{ grid-template-columns: 1fr; }
+
+/* Cantidad en tarjeta */
+.qty{
+  display:grid; grid-template-columns: 1fr auto; gap:8px; align-items:center; margin-top:8px;
+}
+.qty input[type="number"]{ width:100%; }
+
+
+
+footer{max-width:1024px;margin:32px auto;padding:0 16px 24px;color:var(--gris);font-size:.9rem;}
+
+
